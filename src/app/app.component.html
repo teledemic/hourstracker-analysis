@@ -1,3 +1,8 @@
-<h1>
-  {{title}}
-</h1>
+<div *ngIf="!exportFile" fileDrop
+	[ngClass]="{'file-is-over': fileIsOver}"
+	[options]="options"
+	(fileOver)="fileOver($event)"
+	(onFileDrop)="onFileDrop($event)"
+	class="drop-zone">
+	Drop CSV export here
+</div>
