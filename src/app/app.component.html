@@ -6,3 +6,13 @@
 	class="drop-zone">
 	Drop CSV export here
 </div>
+<div class="week" *ngFor="let week of weeks">
+	<div class="day" [style.backgroundColor]="getColor(week.sunday)"><div>{{week.sunday?.date.format("M/D")}}</div></div>
+	<div class="day" [style.backgroundColor]="getColor(week.monday)"><div>{{week.monday?.date.format("M/D")}}</div></div>
+	<div class="day" [style.backgroundColor]="getColor(week.tuesday)"><div>{{week.tuesday?.date.format("M/D")}}</div></div>
+	<div class="day" [style.backgroundColor]="getColor(week.wednesday)"><div>{{week.wednesday?.date.format("M/D")}}</div></div>
+	<div class="day" [style.backgroundColor]="getColor(week.thursday)"><div>{{week.thursday?.date.format("M/D")}}</div></div>
+	<div class="day" [style.backgroundColor]="getColor(week.friday)"><div>{{week.friday?.date.format("M/D")}}</div></div>
+	<div class="day" [style.backgroundColor]="getColor(week.saturday)"><div>{{week.saturday?.date.format("M/D")}}</div></div>
+	<div class="total"></div>
+</div>
