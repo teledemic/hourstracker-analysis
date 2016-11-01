@@ -14,5 +14,8 @@
 	<div class="day" [style.backgroundColor]="getColor(week.thursday)"><div>{{week.thursday?.date.format("M/D")}}</div></div>
 	<div class="day" [style.backgroundColor]="getColor(week.friday)"><div>{{week.friday?.date.format("M/D")}}</div></div>
 	<div class="day" [style.backgroundColor]="getColor(week.saturday)"><div>{{week.saturday?.date.format("M/D")}}</div></div>
-	<div class="total"></div>
+	<div class="total">
+		<div *ngIf="getWeekHours(week)">Worked: {{getWeekHours(week)}}</div>
+		<div *ngIf="getWeekEarned(week)">Earned: {{getWeekEarned(week) | currency : 'USD' : true : '1.2-2'}}</div>
+	</div>
 </div>

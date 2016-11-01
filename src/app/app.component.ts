@@ -26,6 +26,29 @@ export class AppComponent {
 		}
 	}
 
+	public getWeekHours(week: week): number {
+		let total = 0;
+		if (week.sunday) total += week.sunday.hours;
+		if (week.monday) total += week.monday.hours;
+		if (week.tuesday) total += week.tuesday.hours;
+		if (week.wednesday) total += week.wednesday.hours;
+		if (week.thursday) total += week.thursday.hours;
+		if (week.friday) total += week.friday.hours;
+		if (week.saturday) total += week.saturday.hours;
+		return total;
+	}
+	public getWeekEarned(week: week): number {
+		let total = 0;
+		if (week.sunday) total += week.sunday.earnings;
+		if (week.monday) total += week.monday.earnings;
+		if (week.tuesday) total += week.tuesday.earnings;
+		if (week.wednesday) total += week.wednesday.earnings;
+		if (week.thursday) total += week.thursday.earnings;
+		if (week.friday) total += week.friday.earnings;
+		if (week.saturday) total += week.saturday.earnings;
+		return total;
+	}
+
   public fileOver(fileIsOver: boolean): void {
     this.fileIsOver = fileIsOver;
   }
